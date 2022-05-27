@@ -1,0 +1,2 @@
+class MobilityNetworkUser < ApplicationRecord
+end
