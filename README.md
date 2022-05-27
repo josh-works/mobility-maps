@@ -1,24 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is built following along with [https://github.com/josh-works/intermediate_ruby_obstacle_course](https://github.com/josh-works/intermediate_ruby_obstacle_course)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Please see the work there, to fully understand the intent of this project. More specifically:
