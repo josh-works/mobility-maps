@@ -16,10 +16,12 @@ I finally jumped here, in THIS commit, with this version of rails.
 Install with `rbenv install 3.0.1` or whatever version. I'd had it wrong on my other laptop.
 
 ```
-gem install bundler
-bundle install
-rails db:create
-# Success!!!!
+rbenv install 3.0.1 # get correct ruby version, as set in `.ruby-version` and `Gemfile`
+gem install bundler # `use ruby package manager to prep for gem installation via `bundler`
+bundle install # install packages
+rails db:create # set up db
+rails db:seed # run dream-driven-development of app in `seeds.rb`
+# Success ?!?!?
 ```
 
 I can `rails db:seed` and get the expected error from like... _checks watch_ hours ago.
@@ -77,28 +79,28 @@ activity_1_params = {
   "start_date": "2021-07-18 16:12:33+00:00"
 }
 activity_2_params = {
-  "strava_id": 5644576254, 
-  "name": "Peddling around the city", 
-  "distance": 9736.8, 
-  "moving_time": 3397, 
-  "elapsed_time": 13322, 
-  "total_elevation_gain": 100.6, 
-  "elev_high": 1780.3, 
-  "elev_low": 1723.9, 
-  "average_speed": 2.866, 
-  "max_speed": 12.2, 
+  "strava_id": 5644576254,
+  "name": "Peddling around the city",
+  "distance": 9736.8,
+  "moving_time": 3397,
+  "elapsed_time": 13322,
+  "total_elevation_gain": 100.6,
+  "elev_high": 1780.3,
+  "elev_low": 1723.9,
+  "average_speed": 2.866,
+  "max_speed": 12.2,
   "start_date": "2021-07-17 22:38:48+00:00"}
 activity_3_params = {
-  "strava_id": 5639327245, 
-  "name": "Night Ride", 
-  "distance": 1605.7, 
-  "moving_time": 519, 
-  "elapsed_time": 564, 
-  "total_elevation_gain": 50.7, 
-  "elev_high": 1780.2, 
-  "elev_low": 1728.5, 
-  "average_speed": 3.094, 
-  "max_speed": 7.5, 
+  "strava_id": 5639327245,
+  "name": "Night Ride",
+  "distance": 1605.7,
+  "moving_time": 519,
+  "elapsed_time": 564,
+  "total_elevation_gain": 50.7,
+  "elev_high": 1780.2,
+  "elev_low": 1728.5,
+  "average_speed": 3.094,
+  "max_speed": 7.5,
   "start_date": "2021-07-17 03:38:01+00:00"}
 
 Activity.create_with( activity_1_params ).find_or_create_by(strava_id: activity_1_params[:strava_id])
