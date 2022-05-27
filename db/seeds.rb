@@ -6,7 +6,11 @@ mnu = MobilityNetworkUser.new(
   strava_athlete_id: "abc", 
   email_address: "josh@example.com"
 )
-team = Team.new(name: "Denver Scooter Riders", admin: mnu)
+team = Team.new(
+  name: "Denver Scooter Riders"
+)
+
+team.mobility_network_users << mnu
 
 # Subsection 2: Model unassociated Activity
 activity = {
