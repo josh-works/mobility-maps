@@ -1,0 +1,22 @@
+<div id="<%= dom_id mobility_network_user %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= mobility_network_user.name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Strava athlete:</strong>
+    <%= mobility_network_user.strava_athlete_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Email address:</strong>
+    <%= mobility_network_user.email_address %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this mobility network user", mobility_network_user, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this mobility network user', edit_mobility_network_user_path(mobility_network_user), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
