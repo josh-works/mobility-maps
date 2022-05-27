@@ -1,7 +1,11 @@
 # First goal
 
 # Subsection 1: MobilityNetworkUser has_and_belongs_to_many
-mnu = MobilityNetworkUser.new(name: "Josh Thompson", strava_athlete_id: "abc")
+mnu = MobilityNetworkUser.new(
+  name: "Josh Thompson", 
+  strava_athlete_id: "abc", 
+  email_address: "josh@example.com"
+)
 team = Team.new(name: "Denver Scooter Riders", admin: mnu)
 
 # Subsection 2: Model unassociated Activity
@@ -21,6 +25,14 @@ activity = {
   "start_date": "2021-07-18 16:12:33+00:00"
 }
 
+Activity.new(
+  activity
+)
+
+NetworkUserTeam.new(
+  mobility_network_user: mnu,
+  team: team
+  )
 # associate Activity with MobilityNetworkUser
 mnu.activity.create(activity)
 
