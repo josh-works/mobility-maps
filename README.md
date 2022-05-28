@@ -29,5 +29,33 @@ I can `rails db:seed` and get the expected error from like... _checks watch_ hou
 Got Activity model scaffolded:
 
 ```
+--- a/db/migrate/20220528071519_create_activities.rb
++++ b/db/migrate/20220528071519_create_activities.rb
+@@ -1,7 +1,7 @@
+ class CreateActivities < ActiveRecord::Migration[7.0]
+   def change
+-    create_table :activities do |t|
+-      t.integer :strava_id # 5648639527
++    create_table :activities, id: :uuid do |t|
++      t.bigint :strava_id # 5648639527
+       t.string :name       # "Church to clear Creek"
+       t.integer :distance  # # 968.9
+       t.string :moving_time # 612
+diff --git a/db/schema.rb b/db/schema.rb
+index 4717eee..5b38466 100644
+--- a/db/schema.rb
++++ b/db/schema.rb
+@@ -15,8 +15,8 @@
+   enable_extension "pgcrypto"
+   enable_extension "plpgsql"
 
+-  create_table "activities", force: :cascade do |t|
+-    t.integer "strava_id"
++  create_table "activities", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
++    t.bigint "strava_id"
+     t.string "name"
+     t.integer "distance"
+     t.string "moving_time"
 ```
+
+![it's lovely](/images/activity-with-uuid.jpg)

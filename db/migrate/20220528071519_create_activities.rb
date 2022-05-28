@@ -1,7 +1,7 @@
 class CreateActivities < ActiveRecord::Migration[7.0]
   def change
-    create_table :activities do |t|
-      t.integer :strava_id # 5648639527
+    create_table :activities, id: :uuid do |t|
+      t.bigint :strava_id # 5648639527
       t.string :name       # "Church to clear Creek"
       t.integer :distance  # # 968.9
       t.string :moving_time # 612
