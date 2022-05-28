@@ -1,19 +1,19 @@
-# First goal
-
-# Subsection 1: MobilityNetworkUser has_and_belongs_to_many
-mnu = MobilityNetworkUser.new(
-  name: "Josh Thompson", 
-  strava_athlete_id: "abc", 
-  email_address: "josh@example.com"
-)
-team = Team.new(
-  name: "Denver Scooter Riders"
-)
-
-team.mobility_network_users << mnu
+# # First goal
+# 
+# # Subsection 1: MobilityNetworkUser has_and_belongs_to_many
+# mnu = MobilityNetworkUser.create(
+#   name: "Josh Thompson", 
+#   strava_athlete_id: "abc", 
+#   email_address: "josh@example.com"
+# )
+# team = Team.create(
+#   name: "Denver Scooter Riders"
+# )
+# 
+# team.mobility_network_users << mnu
 
 # Subsection 2: Model unassociated Activity
-activity = {
+activity_params = {
   "id": 5648639527,
   "name": "Church to clear Creek",
   "distance": 968.9,
@@ -30,7 +30,7 @@ activity = {
 }
 
 Activity.new(
-  activity
+  activity_params
 )
 
 NetworkUserTeam.new(

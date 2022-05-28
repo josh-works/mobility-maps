@@ -1,6 +1,6 @@
 # README
 
-This is built following along with [https://github.com/josh-works/intermediate_ruby_obstacle_course](https://github.com/josh-works/intermediate_ruby_obstacle_course)
+This is built following along with [https://github.com/josh-works/intermediate_ruby_obstacle_course/tree/main/store-api-data-in-db-reasonably](https://github.com/josh-works/intermediate_ruby_obstacle_course/tree/main/store-api-data-in-db-reasonably)
 
 Please see the work there, to fully understand the intent of this project. More specifically:
 

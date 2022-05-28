@@ -10,12 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_27_091648) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_28_071519) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
-  create_table "mobility_network_users", force: :cascade do |t|
+  create_table "activities", force: :cascade do |t|
+    t.integer "strava_id"
+    t.string "name"
+    t.integer "distance"
+    t.string "moving_time"
+    t.string "elapsed_time"
+    t.decimal "total_elevation_gain", precision: 10
+    t.decimal "elev_high", precision: 10
+    t.decimal "elev_low", precision: 10
+    t.decimal "average_speed", precision: 10
+    t.decimal "max_speed", precision: 10
+    t.string "start_date"
+    t.boolean "public", default: true
+  end
+
+  create_table "mobility_network_users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
     t.string "strava_athlete_id"
     t.string "email_address"
