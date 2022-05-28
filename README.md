@@ -23,3 +23,11 @@ rails db:create
 ```
 
 I can `rails db:seed` and get the expected error from like... _checks watch_ hours ago.
+
+-----------
+
+Got Activity model scaffolded:
+
+```
+
+```

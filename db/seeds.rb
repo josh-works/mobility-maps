@@ -14,7 +14,7 @@
 
 # Subsection 2: Model unassociated Activity
 activity_params = {
-  "id": 5648639527,
+  "strava_id": 5648639527,
   "name": "Church to clear Creek",
   "distance": 968.9,
   "moving_time": 612,
@@ -24,21 +24,19 @@ activity_params = {
   "elev_low": 1729.7,
   "average_speed": 1.583,
   "max_speed": 5.5,
-  "average_heartrate": null,
-  "max_heartrate": null,
   "start_date": "2021-07-18 16:12:33+00:00"
 }
 
-Activity.new(
+Activity.create(
   activity_params
 )
-
-NetworkUserTeam.new(
-  mobility_network_user: mnu,
-  team: team
-  )
-# associate Activity with MobilityNetworkUser
-mnu.activity.create(activity)
+# 
+# NetworkUserTeam.new(
+#   mobility_network_user: mnu,
+#   team: team
+#   )
+# # associate Activity with MobilityNetworkUser
+# mnu.activity.create(activity)
 
 ## Later Round
 #
