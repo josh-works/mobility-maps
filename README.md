@@ -109,3 +109,48 @@ Activity.create_with( activity_3_params ).find_or_create_by(strava_id: activity_
 ```
 
 Notice that I have removed heartrate things (I didn't have that data, usually, don't really care) and named `id`=> `strava_id`. Setting ids as UUIDs.
+## The next day
+
+Phew, swapped back to work laptop now, getting app running with:
+
+```shell
+$ rbenv install 3.0.1
+$ gem install bundler
+$ bundle
+$ rails db:create
+```
+
+Still getting (on this laptop only) the following:
+
+```
+$ bin/rails db:create
+We could not find your database: postgres. Which can be found in the database configuration file located at config/database.yml.
+
+To resolve this issue:
+
+- Did you create the database for this app, or delete it? You may need to create your database.
+- Has the database name changed? Check your database.yml config has the correct database name.
+
+To create your database, run:
+
+        bin/rails db:create
+Couldn't create 'mobility_maps_development' database. Please check your configuration.
+rails aborted!
+ActiveRecord::NoDatabaseError: We could not find your database: postgres. Which can be found in the database configuration file located at config/database.yml.
+
+To resolve this issue:
+
+- Did you create the database for this app, or delete it? You may need to create your database.
+- Has the database name changed? Check your database.yml config has the correct database name.
+
+To create your database, run:
+
+        bin/rails db:create
+
+
+Caused by:
+PG::ConnectionBad: connection to server at "127.0.0.1", port 5432 failed: FATAL:  role "postgres" does not exist
+
+Tasks: TOP => db:create
+(See full trace by running task with --trace)
+```
