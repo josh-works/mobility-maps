@@ -1,6 +1,7 @@
 require "uri"
 require "net/http"
 require "json"
+require 'csv'
 
 class TokenRefresher
   # this works
@@ -15,15 +16,13 @@ class TokenRefresher
 
     response = https.request(request).read_body
     p response
-
-    File.open("tokens.json", "a") do |f|
-      # response_as_json = JSON.parse(response)
-      f.write response
-    end
   end
 
   def self.newest_token
-    # data = CSV.read('tokens.csv', header_converters: :symbol)
+    # data = File.read('tokens.json')
+    # p data
+    # p data.last
+    # p JSON.parse(data.last)
     # data.last["refresh_token"]
     # file = File.read('tokens.json')
     # hash = JSON.parse(file)

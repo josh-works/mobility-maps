@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  token_type: MyString
+  access_token: MyString
+  expires_at: 1
+  expires_in: 1
+  refresh_token: MyString
+  mobility_network_user: one
+
+two:
+  token_type: MyString
+  access_token: MyString
+  expires_at: 1
+  expires_in: 1
+  refresh_token: MyString
+  mobility_network_user: two

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_28_071519) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_18_141258) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -53,4 +53,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_28_071519) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "tokens", force: :cascade do |t|
+    t.string "token_type"
+    t.string "access_token"
+    t.integer "expires_at"
+    t.integer "expires_in"
+    t.string "refresh_token"
+    t.uuid "mobility_network_user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mobility_network_user_id"], name: "index_tokens_on_mobility_network_user_id"
+  end
+
+  add_foreign_key "tokens", "mobility_network_users"
 end
